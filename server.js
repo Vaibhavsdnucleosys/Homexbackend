@@ -2,7 +2,6 @@ import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
-
 // Import routes with filenames EXACTLY as shown in your screenshot
 import employeeRoutes from "./routes/employeeRoutes.js"; // Correct: Matches employeeRoutes.js
 import countryRoutes from "./routes/countryRoutes.js";   // Correct: Matches countryRoutes.js
@@ -17,6 +16,7 @@ import serviceDetailRoutes from "./routes/serviceDetailRoutes.js";
 import serviceActionsRoutes from "./routes/serviceActionsRoutes.js"; 
 import authRoutes from "./routes/auth.js";
 import bookingRoutes from "./routes/booking.js";
+import locationRoutes from "./routes/locationRoutes.js";
 
 // Import database config
 import connectDB from "./config/db.js";
@@ -72,6 +72,7 @@ app.use("/api/service-details", serviceDetailRoutes);
 app.use("/api/service-actions", serviceActionsRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/bookings", bookingRoutes);
+app.use("/api/locations", locationRoutes);
 
 // Health check route to confirm the server is running
 app.get("/api/health", (req, res) => {
